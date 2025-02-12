@@ -1,15 +1,61 @@
 <?php
+/*
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HolaController;*/
 
-//use App\Http\Controllers\BlogController;
-//use App\Http\Controllers\HolaController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
-
+/*use App\Http\Controllers\userPruebaControler;
+use App\Http\Controllers\ActividadesController;
+use App\Models\Task;*/
+/*
 Route::get('/hola/{nombre}', [HolaController::class, 'index']);
+*/
 
 Route::get('/', function () {
-    return view("Welcome");
+    return view("welcome");
 });
 
+
+Route::get('/tasks', [TaskController::class, 'index']);
+
+
+/*
+Route::get('/pruebalayout', function () {
+    return view("pruebalayout");
+});*/
+
+
+/*
+Route::get('/layout', function () {
+    return view("layouts/app");
+});*/
+
+//Route::view('/layout', 'layouts/app')
+
+/*
+Route::get('/tasks', function () {
+    $tasks=Task::all();
+    dump($tasks);
+});*/
+
+/*
+Route::get('/tasks', function () {
+    $tasks=Task::take(10)->all();
+    dump($tasks);
+});
+*/
+
+/*
+Route::get('/tasks', function () {
+    $tasks=Task::take(10)->get(['original'=>'name']); // get o take
+    dump($tasks); // Detiene la ejecución del script 
+});
+*/
+
+
+
+/*
 Route::get('/hola/{nombre}', [HolaController::class, 'show']);
 
 
@@ -33,7 +79,7 @@ Route::get('/', function () {
 });*/
 
 
-
+/*
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     Route::get('dashboard', function () {
         return "Dashboard admin";
@@ -49,3 +95,6 @@ Route::get('/login', function () {
 //Route::view('/welcome', 'hola');
 Route::view('/welcome', 'hola', ['nombre' => 'Taylor']);
     
+Route::get('/quienesSomos/{nombre?}', [userPruebaControler::class, 'quienesSomos']);
+
+Route::get('/actividades', [ActividadesController::class, 'actividades'])->name('actividades');*/
