@@ -14,4 +14,23 @@ class TaskController extends Controller
     'tasks' => $tasks,
     ]);
    }
+
+   public function create()
+   {
+    return view('tasks.create', [
+      'tasks' => new Task(),
+      'submitButtonText' => 'Crear Tarea'
+    ]);
+   }
+
+
+
+
+
+
+
+
+
+
+
 }

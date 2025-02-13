@@ -20,6 +20,14 @@ Route::get('/', function () {
 Route::get('/tasks', [TaskController::class, 'index']);
 
 
+Route::get('tasks', [TaskController::class, 'index'])->name(name:'tasks.index');
+
+
+Route::get('tasks/create', [TaskController::class, 'create'])->name(name:'tasks.create');
+
+
+
+
 /*
 Route::get('/pruebalayout', function () {
     return view("pruebalayout");
