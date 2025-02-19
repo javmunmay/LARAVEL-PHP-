@@ -17,16 +17,22 @@ Route::get('/', function () {
 });
 
 
-Route::get('/tasks', [TaskController::class, 'index']);
+//Route::get('/tasks', [TaskController::class, 'index']);
+
+Route::get("tasks", [TaskController::class, "index"])->name(name:"tasks.index");
+
+Route::get("tasks/create", [TaskController::class, "create"])->name(name:"tasks.create");
+
+Route::post('tasks', [TaskController::class, "store"])->name(name:"tasks.store");
+
+Route::get("tasks/{task}/edit", [TaskController::class, "edit"])->name(name:"tasks.edit");
+
+Route::put("tasks/{task}", [TaskController::class, "update"])->name(name:"tasks.update");
+
+Route::patch("tasks/{task}/toggle", [TaskController::class, "toggle"])->name("tasks.toggle");
 
 
-Route::get('tasks', [TaskController::class, 'index'])->name(name:'tasks.index');
-
-
-Route::get('tasks/create', [TaskController::class, 'create'])->name(name:'tasks.create');
-
-
-
+Route::delete("tasks/{task}/destroy", [TaskController::class, "destroy"])->name("tasks.destroy");
 
 /*
 Route::get('/pruebalayout', function () {
